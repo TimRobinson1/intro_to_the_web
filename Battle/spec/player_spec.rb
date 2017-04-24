@@ -16,8 +16,7 @@ describe Player do
 
   describe '#take_damage' do
     it 'subtracts 10 from health when attacked' do
-      player.take_damage
-      expect(player.health).to eq 90
+      expect { player.take_damage }.to change { player.health }.by(-10)
     end
   end
 end
