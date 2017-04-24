@@ -9,7 +9,11 @@ get '/secret' do
   'This is a secret page'
 end
 
-get '/named-cat' do
+get '/cat-naming' do
+  erb(:form)
+end
+
+post '/named-cat' do
   p params
   @name = params[:name]
   erb(:index)
