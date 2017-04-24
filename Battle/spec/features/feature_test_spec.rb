@@ -17,4 +17,11 @@ feature 'Feature test' do
     sign_in_and_play
     expect(page).to have_content 'Player 2: Villain, Hit Points: 100'
   end
+
+  it 'confirms attacks' do
+    sign_in_and_play
+    expect(page).not_to have_content 'Hero attacked Villain!'
+    find('#attack').click
+    expect(page).to have_content 'Hero attacked Villain!'
+  end
 end
