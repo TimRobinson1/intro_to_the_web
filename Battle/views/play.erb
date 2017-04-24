@@ -1,8 +1,8 @@
 <html>
   <head></head>
   <body>
-    <p>Player 1: <%= @player1 %>, Hit Points: 100</p>
-    <p>Player 2: <%= @player2 %>, Hit Points: 100</p>
+    <p>Player 1: <%= @player1 %>, Hit Points: <%= $player1.health %></p>
+    <p>Player 2: <%= @player2 %>, Hit Points: <%= $player2.health %></p>
     <form action='/attack'>
       <button type='submit' id='attack'>Attack <%= @player2 %>!</button>
     </form>

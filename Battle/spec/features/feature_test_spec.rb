@@ -24,4 +24,10 @@ feature 'Feature test' do
     find('#attack').click
     expect(page).to have_content 'Hero attacked Villain!'
   end
+
+  it 'takes away 10 health in one attack' do
+    sign_in_and_play
+    find('#attack').click
+    expect(page).to have_content 'Player 2: Villain, Hit Points: 90'
+  end
 end
