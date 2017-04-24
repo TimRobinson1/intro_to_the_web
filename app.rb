@@ -2,7 +2,7 @@
 require 'sinatra'
 
 get '/' do
-  'hello!'
+  redirect to('/cat-naming')
 end
 
 get '/secret' do
