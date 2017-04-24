@@ -9,14 +9,13 @@ get '/secret' do
   'This is a secret page'
 end
 
-get '/test' do
-  'Test page'
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb(:index)
 end
 
-get '/random' do
-  'asd;maspdma'
-end
-
-get '/cat' do
+get '/random-cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
