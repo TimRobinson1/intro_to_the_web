@@ -8,6 +8,14 @@ class Game
     @other_player = @p2
   end
 
+  def self.start(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.current
+    @game
+  end
+
   def p1_name
     @p1.name
   end
