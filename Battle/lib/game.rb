@@ -32,6 +32,10 @@ class Game
     end
   end
 
+  def player_down?
+    @p1.health <= 0 || @p2.health <= 0
+  end
+
   def take_damage(player)
     player.take_damage
   end

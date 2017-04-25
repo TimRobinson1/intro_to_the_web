@@ -45,4 +45,14 @@ feature 'Feature test' do
     find_button('Change Turns').click
     expect(page).to have_content 'Player 1: Hero, Hit Points: 90'
   end
+
+  it 'results in endgame message if a player dies' do
+    sign_in_and_play
+    18.times do
+      find('#attack').click
+      find_button('Change Turns').click
+    end
+    find('#attack').click
+    expect(page).to have_content 'Villain DIED'
+  end
 end

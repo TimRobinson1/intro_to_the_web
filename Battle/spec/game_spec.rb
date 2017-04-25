@@ -39,10 +39,22 @@ describe Game do
       expect(game.current_player).to eq jeff
     end
   end
+
   describe '#switch_player' do
     it 'returns player 2 after switching' do
       game.switch_player
       expect(game.current_player).to eq bill
+    end
+  end
+
+  describe '#player_down?' do
+    it 'returns false when both players have more than 0 health' do
+      expect(game.player_down?).to eq false
+    end
+
+    it 'returns true when a player has 0 health' do
+      allow(jeff).to receive(:health).and_return(0)
+      expect(game.player_down?).to eq true
     end
   end
 end

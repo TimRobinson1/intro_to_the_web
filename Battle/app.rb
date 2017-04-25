@@ -23,12 +23,17 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     $game.take_damage($game.other_player)
+    redirect '/game-over' if $game.player_down?
     erb(:attack)
   end
 
   get '/change-turn' do
     $game.switch_player
     erb(:play)
+  end
+
+  get '/game-over' do
+    erb(:gameover)
   end
 
   #
