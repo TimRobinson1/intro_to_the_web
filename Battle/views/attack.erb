@@ -1,7 +1,22 @@
 <html>
-  <head></head>
+  <head>
+
+    <style type='text/css'>
+
+      .player1 {
+
+        background-color: red;
+
+      }
+
+
+
+    </style>
+
+  </head>
+
   <body>
-    <p>Player 1: <%= @game.p1_name %>, Hit Points: <%= @game.p1_health %></p>
+    <p class='player1'>Player 1: <%= @game.p1_name %>, Hit Points: <%= @game.p1_health %></p>
     <p>Player 2: <%= @game.p2_name %>, Hit Points: <%= @game.p2_health %></p>
     <p><%= @game.current_player.name %> attacked <%= @game.other_player.name %>!</p>
     <form action='/change-turn'>
