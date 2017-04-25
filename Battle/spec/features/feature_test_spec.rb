@@ -30,4 +30,19 @@ feature 'Feature test' do
     find('#attack').click
     expect(page).to have_content 'Player 2: Villain, Hit Points: 90'
   end
+
+  it 'presents button to change turns' do
+    sign_in_and_play
+    find('#attack').click
+    within('form') { expect(page).to have_content 'Change Turns'}
+  end
+
+  it 'allows players to exchange damage' do
+    sign_in_and_play
+    find('#attack').click
+    find_button('Change Turns').click
+    find('#attack').click
+    find_button('Change Turns').click
+    expect(page).to have_content 'Player 1: Hero, Hit Points: 90'
+  end
 end

@@ -1,10 +1,10 @@
 <html>
   <head></head>
   <body>
-    <p>Player 1: <%= @player1 %>, Hit Points: <%= $player1.health %></p>
-    <p>Player 2: <%= @player2 %>, Hit Points: <%= $player2.health %></p>
+    <p>Player 1: <%= $game.p1_name %>, Hit Points: <%= $game.p1_health %></p>
+    <p>Player 2: <%= $game.p2_name %>, Hit Points: <%= $game.p2_health %></p>
     <form action='/attack'>
-      <button type='submit' id='attack'>Attack <%= @player2 %>!</button>
+      <button type='submit' id='attack'>Attack <%= $game.other_player.name %>!</button>
     </form>
   </body>
 </html>
