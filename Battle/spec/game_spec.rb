@@ -18,7 +18,7 @@ describe Game do
   describe '#attack' do
     it 'calls appropriate damage method on player' do
       allow(jeff).to receive(:take_damage).and_return(90)
-      expect(game.attack(jeff)).to eq 90
+      expect(game.attack(jeff)).to eq 'Jeff was attacked!'
     end
   end
 

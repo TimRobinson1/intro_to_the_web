@@ -26,12 +26,12 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game.attack(@game.other_player)
     redirect '/game-over' if @game.player_down?
-    erb(:attack)
+    erb(:play)
   end
 
-  get '/change-turn' do
-    @game.switch_player
-    erb(:play)
+  get '/heal' do
+    @game.heal(@game.current_player)
+    erb(:heal)
   end
 
   get '/game-over' do

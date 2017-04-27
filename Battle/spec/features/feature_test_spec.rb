@@ -20,31 +20,23 @@ feature 'Feature test' do
 
   it 'confirms attacks' do
     sign_in_and_play
-    expect(page).not_to have_content 'Hero attacked Villain!'
-    find('#attack').click
-    expect(page).to have_content 'Hero attacked Villain!'
+    expect(page).not_to have_content 'Villain was attacked!'
+    find('#fight').click
+    expect(page).to have_content 'Villain was attacked!'
   end
 
   it 'takes away health in an attack' do
     sign_in_and_play
     srand(5)
-    find('#attack').click
+    find('#fight').click
     expect(page).to have_content 'Player 2: Villain, Hit Points: 90'
-  end
-
-  it 'presents button to change turns' do
-    sign_in_and_play
-    find('#attack').click
-    within('form') { expect(page).to have_content 'Change Turns'}
   end
 
   it 'allows players to exchange damage' do
     sign_in_and_play
     srand(18)
-    find('#attack').click
-    find_button('Change Turns').click
-    find('#attack').click
-    find_button('Change Turns').click
+    find('#fight').click
+    find('#fight').click
     expect(page).to have_content 'Player 1: Hero, Hit Points: 90'
   end
 
@@ -52,10 +44,9 @@ feature 'Feature test' do
     sign_in_and_play
     srand(18)
     14.times do
-      find('#attack').click
-      find_button('Change Turns').click
+      find('#fight').click
     end
-    find('#attack').click
-    expect(page).to have_content 'Hero DIED'
+    find('#fight').click
+    expect(page).to have_content 'Villain DIED'
   end
 end

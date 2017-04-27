@@ -4,7 +4,7 @@
   </head>
   <body>
     <div class='index-up'>
-      <p id="floaty" class="death"><%= @game.p2_health >= 0 ? @game.p2_name : @game.p1_name %> DIED</p>
+      <p id="floaty" class="death"><%= @game.p2_health <= 0 ? @game.p2_name : @game.p1_name %> DIED</p>
     </div>
   </body>
 </html>

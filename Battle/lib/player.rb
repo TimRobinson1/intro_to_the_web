@@ -1,5 +1,6 @@
 class Player
   attr_reader :name, :health
+  attr_writer :health
 
   def initialize(name)
     @name = name

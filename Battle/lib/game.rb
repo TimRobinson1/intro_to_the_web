@@ -1,11 +1,12 @@
 class Game
-  attr_reader :p1, :p2, :current_player, :other_player
+  attr_reader :p1, :p2, :current_player, :other_player, :battle_message
 
   def initialize(player1, player2)
     @p1 = player1
     @p2 = player2
     @current_player = @p1
     @other_player = @p2
+    @battle_message = ''
   end
 
   def self.start(player1, player2)
@@ -33,11 +34,7 @@ class Game
   end
 
   def switch_player
-    if @current_player == @p1
-      @current_player, @other_player = @p2, @p1
-    else
-      @current_player, @other_player = @p1, @p2
-    end
+    @current_player, @other_player = @other_player, @current_player
   end
 
   def player_down?
@@ -46,6 +43,11 @@ class Game
 
   def attack(player)
     player.take_damage
+    switch_player
+    @battle_message = "#{player.name} was attacked!"
   end
 
+  def heal(player)
+    player.health += rand(4..30)
+  end
 end
