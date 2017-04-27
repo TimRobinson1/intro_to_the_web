@@ -25,8 +25,9 @@ feature 'Feature test' do
     expect(page).to have_content 'Hero attacked Villain!'
   end
 
-  it 'takes away 10 health in one attack' do
+  it 'takes away health in an attack' do
     sign_in_and_play
+    srand(5)
     find('#attack').click
     expect(page).to have_content 'Player 2: Villain, Hit Points: 90'
   end
@@ -39,6 +40,7 @@ feature 'Feature test' do
 
   it 'allows players to exchange damage' do
     sign_in_and_play
+    srand(18)
     find('#attack').click
     find_button('Change Turns').click
     find('#attack').click
@@ -48,11 +50,12 @@ feature 'Feature test' do
 
   it 'results in endgame message if a player dies' do
     sign_in_and_play
-    18.times do
+    srand(18)
+    14.times do
       find('#attack').click
       find_button('Change Turns').click
     end
     find('#attack').click
-    expect(page).to have_content 'Villain DIED'
+    expect(page).to have_content 'Hero DIED'
   end
 end

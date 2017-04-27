@@ -15,7 +15,8 @@ describe Player do
   end
 
   describe '#take_damage' do
-    it 'subtracts 10 from health when attacked' do
+    it 'subtracts appropriate amount from health when attacked' do
+      srand(5)
       expect { player.take_damage }.to change { player.health }.by(-10)
     end
   end

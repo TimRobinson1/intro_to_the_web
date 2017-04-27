@@ -96,9 +96,88 @@ h2 {
 
   position:absolute;
   z-index: 0;
-  width:1000px;
-  height:500px;
   margin:0 auto;
-  left: 200px;
+  left: 0px;
+  width:1450px;
+  height:700px;
+
+}
+
+p {
+
+  color:white;
+  font-weight:bold;
+
+}
+
+.index-up {
+
+  position:relative;
+  z-index: 1;
+
+}
+
+.head1 {
+
+  font-size:50px;
+  float:left;
+
+}
+
+.head2 {
+
+  font-size: 50px;
+  float:right;
+
+}
+
+.bottombutton {
+
+  width:300px;
+  height:50px;
+  position:relative;
+  margin:0 auto;
+  margin-left: 570px;
+  font-size:30px;
+  border-radius: 15%;
+  float:center;
+  background-color:orangered;
+  color:white;
+  outline:none;
+  transition: background-color 0.5s;
+
+}
+
+.begin:hover {
+
+  background-color: forestgreen;
+
+}
+
+.death {
+
+  font-size:50px;
+  font-weight: bold;
+  margin:0 auto;
+  margin-top: 400px;
+  margin-left: 450px;
+  text-shadow: 2px 2px 1px blue,
+       -2px -2px 1px black,
+       -2px 2px 1px blue,
+        2px -2px 1px blue;
+
+}
+
+#floaty {
+
+  position: absolute !important;
+  z-index: 1
+
+}
+
+#changeturns {
+
+  background-color:blue !important;
+  border:none;
 
 }

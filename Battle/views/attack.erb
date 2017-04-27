@@ -1,26 +1,18 @@
 <html>
   <head>
-
-    <style type='text/css'>
-
-      .player1 {
-
-        background-color: red;
-
-      }
-
-
-
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="./css/mainstyle.css">
   </head>
 
   <body>
-    <p class='player1'>Player 1: <%= @game.p1_name %>, Hit Points: <%= @game.p1_health %></p>
-    <p>Player 2: <%= @game.p2_name %>, Hit Points: <%= @game.p2_health %></p>
-    <p><%= @game.current_player.name %> attacked <%= @game.other_player.name %>!</p>
-    <form action='/change-turn'>
-      <button type='submit'>Change Turns</button>
-    </form>
+    <div class='index-up'>
+      <p class='head1'>Player 1: <%= @game.p1_name %>, Hit Points: <%= @game.p1_health %></p>
+      <p class='head2'>Player 2: <%= @game.p2_name %>, Hit Points: <%= @game.p2_health %></p>
+      <div style='clear:both;'></div>
+      <form action='/change-turn'>
+        <button id='changeturns' class='bottombutton' type='submit'>Change Turns</button>
+      </form>
+      <div style='clear:both;'></div>
+      <p class='death'><%= @game.current_player.name %> attacked <%= @game.other_player.name %>!</p>
+    </div>
   </body>
 </html>

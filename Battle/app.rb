@@ -7,6 +7,9 @@ class Battle < Sinatra::Base
     @game = Game.current
   end
 
+
+  configure(:development) { set :session_secret, "something" }
+
   get '/' do
     erb(:index)
   end
@@ -21,7 +24,7 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    @game.take_damage(@game.other_player)
+    @game.attack(@game.other_player)
     redirect '/game-over' if @game.player_down?
     erb(:attack)
   end

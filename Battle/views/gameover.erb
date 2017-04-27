@@ -1,5 +1,10 @@
 <html>
-
-  <p><%= @game.p2_health >= 0 ? @game.p2_name : @game.p1_name %> DIED</p>
-
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/mainstyle.css">
+  </head>
+  <body>
+    <div class='index-up'>
+      <p id="floaty" class="death"><%= @game.p2_health >= 0 ? @game.p2_name : @game.p1_name %> DIED</p>
+    </div>
+  </body>
 </html>

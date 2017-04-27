@@ -1,10 +1,15 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/mainstyle.css">
+  </head>
   <body>
-    <p>Player 1: <%= @game.p1_name %>, Hit Points: <%= @game.p1_health %></p>
-    <p>Player 2: <%= @game.p2_name %>, Hit Points: <%= @game.p2_health %></p>
-    <form action='/attack'>
-      <button type='submit' id='attack'>Attack <%= @game.other_player.name %>!</button>
-    </form>
+    <div class='index-up'>
+      <p class='head1'>Player 1: <%= @game.p1_name %>, Hit Points: <%= @game.p1_health %></p>
+      <p class='head2'>Player 2: <%= @game.p2_name %>, Hit Points: <%= @game.p2_health %></p>
+      <div style='clear:both;'></div>
+      <form action='/attack'>
+        <button class='bottombutton' type='submit' id='attack'>Attack <%= @game.other_player.name %>!</button>
+      </form>
+    </div>
   </body>
 </html>

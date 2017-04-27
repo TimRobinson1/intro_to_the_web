@@ -7,6 +7,6 @@ class Player
   end
 
   def take_damage
-    @health -= 10
+    @health -= rand(7..18)
   end
 end

@@ -5,7 +5,7 @@ describe Game do
   let(:bill) { double :player, health: 100 }
   subject(:game) { described_class.new(jeff, bill) }
 
-  it { is_expected.to respond_to :take_damage }
+  it { is_expected.to respond_to :attack }
 
   it 'starts with player one' do
     expect(game.p1).to eq jeff
@@ -15,10 +15,10 @@ describe Game do
     expect(game.p2).to eq bill
   end
 
-  describe '#take_damage' do
-    it 'calls appropriate damage method onplayer' do
+  describe '#attack' do
+    it 'calls appropriate damage method on player' do
       allow(jeff).to receive(:take_damage).and_return(90)
-      expect(game.take_damage(jeff)).to eq 90
+      expect(game.attack(jeff)).to eq 90
     end
   end
 
